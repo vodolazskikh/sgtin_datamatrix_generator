@@ -45,9 +45,10 @@
 }
 
 .title {
-  margin: 0;
+  margin: 16px;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 
 .title,
@@ -58,6 +59,25 @@
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.datamatrix {
+  width: 256px;
+  height: 256px;
+}
+
+.input {
+  padding: 4px 12px;
+  font-size: 2rem;
+  margin: 8px;
+  width: 400px;
 }
 
 .code {

@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Генератор svg datamatrix-a в формате нужном "Честному знаку"
 
-## Getting Started
+### Как оно работает
 
-First, run the development server:
+Пишем в поле ввода sgtin, а дальше из него собирается валидный код, который Честный знак может принять.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Составные элементы Data Matrix:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+идентификатор применения — два символа («01»);
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+код товара, GTIN — 14 знаков;
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+идентификатор применения — два символа («21»);
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+уникальный серийный номер — 13 знаков;
 
-## Learn More
+идентификатор применения — два символа («91»);
+ключ проверки — 4 знака;
 
-To learn more about Next.js, take a look at the following resources:
+идентификатор применения — два символа («92»);
+код проверки — 88 знаков.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### ВАЖНО: Последние два генерируются "от болды", ни в коем случае не используйте тулзу для генерации боевых датаматриксов, она предназначена исключительно для дебага сканирования dataMatrix-ов!!!
